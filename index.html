@@ -9,7 +9,7 @@
 
   <script id="_wau9k4">var _wau = _wau || []; _wau.push(["dynamic", "xp60vul13d", "2h3", "ffffffffffff", "small"]);</script><script async src="//waust.at/d.js"></script>
 
-  <link rel="preload" as="video" type="video/mp4" href="videos/tutorial.mp4" fetchpriority="high">
+  <link rel="preload" as="image" type="image/gif" href="videos/tutorial.gif" fetchpriority="high">
   <link rel="preload" as="image" type="image/webp" href="https://movilios.com/roblox.webp?v=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -201,9 +201,7 @@
     </section>
 
     <figure class="showcase">
-      <video id="tutGif" autoplay muted loop playsinline preload="auto" disablepictureinpicture disableremoteplayback aria-label="Open in browser tutorial">
-        <source src="videos/tutorial.mp4" type="video/mp4">
-      </video>
+      <img id="tutGif" src="videos/tutorial.gif" alt="Open in browser tutorial" fetchpriority="high">
       <figcaption class="badge"><span>Live demo</span></figcaption>
       <div class="gif-alt" id="gifAlt">
         <div>
@@ -245,7 +243,9 @@
         document.getElementById("s2Sub").textContent="The article will load in Safari.";
       }
       var media=document.getElementById("tutGif");
-      media.addEventListener("error",function(){media.style.display="none";document.getElementById("gifAlt").classList.add("show")});
+      if(media){
+        media.addEventListener("error",function(){media.style.display="none";document.getElementById("gifAlt").classList.add("show")});
+      }
       setTimeout(function(){if(root.classList.contains("external")){document.body.style.visibility="visible";document.getElementById("panel").style.display="none";document.getElementById("redirBox").style.display="flex"}},800);
     })();
   </script>
